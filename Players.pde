@@ -1,5 +1,5 @@
-float x1 = 0, y1 = 0, speedX1 = 0, speedY1 = 0, x2 = 0, y2 = 0, speedX2 = 0, speedY2 = 0; 
-final int SPEED = 4;
+float x1 = 0, y1 = 0, speedX1 = 0, speedY1 = 0, x2 = 0, y2 = 90, speedX2 = 0, speedY2 = 0; 
+final int SPEED = 9;
 //controls
 
 //Within game loop
@@ -12,14 +12,14 @@ void movePlayers(){
 }
 
 void drawPlayers(){
-  x1 = constrain(x1, 0, 400);
-  x2 = constrain(x2, 0, 400);
-  y1 = constrain(y1, 0, 400);
-  y2 = constrain(y2, 0, 400);
+  x1 = constrain(x1, 0, 650);
+  x2 = constrain(x2, 0, 650);
+  y1 = constrain(y1, 0, 650);
+  y2 = constrain(y2, 0, 650);
   PImage p1 = loadImage("female_idle.png"); 
   PImage p2 = loadImage("player_idle.png"); 
-  image(p1,100,200);
-  image(p2,200,200);
+  image(p1,x1,y1);
+  image(p2,x2,y2);
 }
 
 //Independant of game loop controls
@@ -31,9 +31,9 @@ void keyPressed() {
   else if (keyCode == LEFT)
     speedX1 = -SPEED;
   else if (keyCode == UP)
-    speedY1 = SPEED;
-  else if (keyCode == DOWN)
     speedY1 = -SPEED;
+  else if (keyCode == DOWN)
+    speedY1 = +SPEED;
   //ToMovePlayer2
   else if (key == 'D' || key =='d')
     speedX2 = SPEED;
