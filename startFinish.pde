@@ -1,4 +1,4 @@
-color button = color(255,255,0);
+color button = color(255, 255, 0);
 
 void startScreen() {
   scene = 0;
@@ -10,20 +10,32 @@ void startScreen() {
   rect(width/2, height/2, width/2, height/2);
   fill(button);
   stroke(0);
-  rect(width/2,290,300,50);
+  rect(width/2, 290, 300, 50);
   fill(0);
   textAlign(CENTER);
   textSize(30);
   text("Click here to start", width/2, 300);
-  if(mouseX<(width/2+300) && mouseX>(width/2-300) && mouseY<(340) && mouseY>(260)){
-    button = color(255,100,0);
-    if(mousePressed){
+  if (mouseX<(width/2+300) && mouseX>(width/2-300) && mouseY<(340) && mouseY>(260)) {
+    button = color(255, 100, 0);
+    if (mousePressed) {
       scene = 1;
       game();
     }
+  } else {
+    button = color(255, 255, 0);
   }
-  else{
-   button = color(255,255,0); 
+}
+void mouseClicked() {
+  switch(scene){
+  case 0:
+    start();
+    break;
+  case 1:
+    game();
+    break;
+  case 2:
+    finish();
+    break;
   }
 }
 void finish() {
