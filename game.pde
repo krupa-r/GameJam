@@ -4,20 +4,19 @@ float obstacleSpeed = 10;
 int obstacleArrangment = (int)(Math.random()*3);
 boolean isGameOver = false;
 int scene;
+
 void setup(){
   size(800,800);
   buttonX = width/2 - buttonWidth/2;
-  buttonY = height/2 - buttonHeight/2;
+  buttonYPlayer1 = height/2 - buttonHeight - buttonSpacing/2;
+  buttonYPlayer2 = height/2 + buttonSpacing/2;
 }
 
 void draw(){
   //startScreen();
   game();
-  fill(255);
-  rect(buttonX, buttonY, buttonWidth, buttonHeight);
-  fill(0);
-  textAlign(CENTER, CENTER);
-  text("Finish", buttonX, buttonY, buttonWidth, buttonHeight);
+  drawButton(buttonX, buttonYPlayer1, "Finish Player 1");
+  drawButton(buttonX, buttonYPlayer2, "Finish Player 2");
   if(isGameOver){
   finish();
   }
