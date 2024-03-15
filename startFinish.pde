@@ -13,14 +13,14 @@ void finish() {
   textSize(30);
   text("Game Over!", width/2, 300);
   
-  if(score2>score1){
-  text("Player2 wins!",200,200);
+  if(score2==1){
+  text("Player 2 wins!",200,200);
   text("Your score is " + score2, (width/2),500);
   noLoop();
   }
   
-  else if(score1>score2){
-  text("Player1 wins!",width/2,height/2);
+  else if(score1==1){
+  text("Player 1 wins!",width/2,height/2);
   text("Your score is " + score1, (width/2),500);
   noLoop();
   }
