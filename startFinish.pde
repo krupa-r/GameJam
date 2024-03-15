@@ -50,20 +50,22 @@ void finish() {
   textAlign(CENTER);
   textSize(30);
   text("Game Over!", width/2, 300);
-  //if(score2>score){
-  //text("Player2 wins!",200,200);
-  //text("Your score is " + score2, 200,250);
-  //noLoop();
-  //}
-  //else if(score>score2){
-  //text("Player1 wins!",width/2,height/2);
-  //text("Your score is " + score, ,height/2+20);
-  //noLoop();
-  //}
-  //else{
-  // text("Its a tie!",200,200);
-  //text("Your score is " + score, 200,250);
+  
+  if(score2>score1){
+  text("Player2 wins!",200,200);
+  text("Your score is " + score2, 200,250);
   noLoop();
-  // }
-  // }
+  }
+  
+  else if(score1>score2){
+  text("Player1 wins!",width/2,height/2);
+  text("Your score is " + score1, 200,250);
+  noLoop();
+  }
+  
+  else{
+  text("Its a tie!",200,200);
+  text("Your score is " + score1, 200,250);
+  noLoop();
+  }
 }
