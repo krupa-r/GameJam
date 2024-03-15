@@ -6,14 +6,21 @@ boolean isGameOver = false;
 int scene;
 void setup(){
   size(800,800);
+  buttonX = width/2 - buttonWidth/2;
+  buttonY = height/2 - buttonHeight/2;
 }
 
 void draw(){
   //startScreen();
   game();
-  //if(isGameOver){
-  //finish();
-  //}
+  fill(255);
+  rect(buttonX, buttonY, buttonWidth, buttonHeight);
+  fill(0);
+  textAlign(CENTER, CENTER);
+  text("Finish", buttonX, buttonY, buttonWidth, buttonHeight);
+  if(isGameOver){
+  finish();
+  }
 }
 
 void drawObstacles(){
