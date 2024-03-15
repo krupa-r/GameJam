@@ -9,10 +9,11 @@ void setup(){
 }
 
 void draw(){
-  startScreen();
-  if(isGameOver){
-  finish();
-  }
+  //startScreen();
+  game();
+  //if(isGameOver){
+  //finish();
+  //}
 }
 
 void drawObstacles(){
@@ -170,4 +171,6 @@ void game(){
   centerGround();
   path();
   drawObstacles(); 
+  drawPlayers();
+  movePlayers();
 }
