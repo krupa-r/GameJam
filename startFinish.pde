@@ -1,17 +1,7 @@
-
 color button = color(255,255,0);
-boolean isGameOver = false;
-void setup() {
-  size(800, 800);
-}
-void draw() {
-  startScreen();
-  //game();
-  if(isGameOver){
-  finish();
-  }
-}
+
 void startScreen() {
+  scene = 0;
   background(0);
   fill(0, 255, 0);
   strokeWeight(5);
@@ -28,7 +18,8 @@ void startScreen() {
   if(mouseX<(width/2+300) && mouseX>(width/2-300) && mouseY<(340) && mouseY>(260)){
     button = color(255,100,0);
     if(mousePressed){
-      //game();
+      scene = 1;
+      game();
     }
   }
   else{
@@ -36,6 +27,7 @@ void startScreen() {
   }
 }
 void finish() {
+  scene =2;
   background(0);
   fill(0, 255, 0);
   strokeWeight(5);

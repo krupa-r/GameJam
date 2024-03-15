@@ -12,14 +12,14 @@ void movePlayers(){
 }
 
 void drawPlayers(){
-  x1 = constrain(x1, 15, 785);
-  x2 = constrain(x2, 25, 775);
-  y1 = constrain(y1, 15, 785);
-  y2 = constrain(y2, 25, 775);
+  x1 = constrain(x1, 0, 400);
+  x2 = constrain(x2, 0, 400);
+  y1 = constrain(y1, 0, 400);
+  y2 = constrain(y2, 0, 400);
   PImage p1 = loadImage("female_idle.png"); 
   PImage p2 = loadImage("player_idle.png"); 
-  image(p1,x1,y1);
-  image(p2,x1,y1);
+  image(p1,100,200);
+  image(p2,200,200);
 }
 
 //Independant of game loop controls

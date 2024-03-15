@@ -2,16 +2,17 @@ final int w = 100, h = 100;
 int obstacleY = 0;
 float obstacleSpeed = 10;
 int obstacleArrangment = (int)(Math.random()*3);
-
+boolean isGameOver = false;
+int scene;
 void setup(){
   size(800,800);
 }
 
 void draw(){
-  drawBackground();
-  centerGround();
-  path();
-  drawObstacles();
+  startScreen();
+  if(isGameOver){
+  finish();
+  }
 }
 
 void drawObstacles(){
@@ -22,6 +23,7 @@ void drawObstacles(){
 }
 
 void drawBackground(){
+  scene = 1;
 //Left Edge
   PImage leftEdgeBackground = loadImage("roadTexture_27.png");
   for(int le = h; le < height-h; le+=h){
@@ -161,4 +163,11 @@ void horizontalEdge(boolean side){
       obstacle(500,720,true);
     }
   }
+}
+
+void game(){
+ drawBackground();
+  centerGround();
+  path();
+  drawObstacles(); 
 }
